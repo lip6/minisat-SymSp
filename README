@@ -1,0 +1,51 @@
+
+
+This sat solver is based on minisat SPFS : https://github.com/JoD/minisat-SPFS
+
+
+
+================================================================================
+Building:
+
+cd sat_symmetry
+source .env
+make third_party
+make
+cd ..
+make cr
+
+cp build/release/bin/minisat_core runner/
+
+
+================================================================================
+Execute:
+
+Execute minisat-SymSP
+
+./runner/execute.sh CNF_FILE
+
+--
+
+Execute minisat-Sym
+
+./runner/execute.sh -no-dynamic-breaking CNF_FILE
+
+--
+
+Execute minisat-Sp
+
+./runner/execute.sh -no-cosy CNF_FILE
+
+================================================================================
+Directory Overview:
+
+minisat/mtl/            Mini Template Library
+minisat/utils/          Generic helper code (I/O, Parsing, CPU-time, etc)
+minisat/core/           A core version of the solver
+minisat/simp/           An extended solver with simplification capabilities
+sat_symmetry/           A library for ESBPA
+doc/                    Documentation
+README
+LICENSE
+
+================================================================================
